@@ -1,0 +1,37 @@
+input {
+    font-family: sans-serif;
+    color: red;
+}
+
+input.person {
+    color: blue;
+}
+
+input#first_name{
+    color: green;
+}
+
+div{
+    border-bottom: 1px solid grey;
+}
+
+form div{
+    margin-bottom: 15px;
+}
+
+form input{
+    background-color: lightgray;
+}
+
+form div > input{
+    background-color: lightblue;
+}
+
+label{
+    color: rgb(102,128,80);
+}
+
+
+.block{
+    border: 1px solid blue;
+}
