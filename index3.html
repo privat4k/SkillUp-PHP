@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Формы</title>
+</head>
+<link rel="stylesheet" href="styles2.css">
+<body>
+
+    <form action="index.html" method="get">
+        <div>
+            <input type="checkbox" name="courses" value="1" >
+            <label>
+                Это метка для чекбокса: нажмите на меня - чекбокс сменит галочку!
+            </label>
+        </div>
+        <br>
+
+        <div>
+            <input type="checkbox" name="courses" value="1" checked>
+            <label>
+                Я отмечен по умолчанию!
+            </label>
+        </div>
+        <br>
+
+        <div>
+            <input type="checkbox" name="courses" value="1" checked disabled>
+            <label>
+                Я disabled!
+            </label>
+        </div>
+        <br>
+
+        <div  class="obv">
+            <div>
+                Это группа радиокнопок - только одна из них может быть отмечена!
+            </div>
+            <br>
+                <input type="radio" name="driving" value="1">
+                <label >
+                    Это метка для радио
+                </label>
+                <br>
+                <br>
+                <input type="radio" name="driving" value="2">
+                <label>
+                    Это метка для радио
+                </label>
+        </div>
+            <input type="submit" value="Отправить на сервер">
+    </form>
+</body>
+</html>

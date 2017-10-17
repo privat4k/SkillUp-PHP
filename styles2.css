@@ -1,0 +1,41 @@
+i{
+    color: blue;
+    font-weight: bold
+}
+
+ol{
+    color: red;
+}
+
+
+b{
+    color: red;
+    font-size: 20px;
+}
+ul {
+    color: gray;
+    font-style: italic;
+}
+label {
+    border: 1px solid red;
+}
+h1{
+    color: red;
+    text-align: center;
+}
+
+h2{
+    color: green;
+}
+
+.obv {
+    border: 1px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.text{
+    font-family: 12px "Arial";
+    text-align: justify;
+    width: 500px;
+}
