@@ -15,6 +15,7 @@ b{
 ul {
     color: gray;
     font-style: italic;
+    width: 500px;
 }
 label {
     border: 1px solid red;
@@ -34,8 +35,8 @@ h2{
     margin-bottom: 10px;
 }
 
-.text{
-    font-family: 12px "Arial";
+p{
+    font: 12px/25px Arial;
     text-align: justify;
     width: 500px;
 }
