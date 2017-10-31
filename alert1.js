@@ -1,14 +1,57 @@
-'use strict'
+'use strict';
 
-var plusButton = document.getElementById('plus'),
-    op1 = document.getElementById('op1'),
-    op2 = document.getElementById('op2'),
-    result = document.getElementById('result');
+$(document).ready(function () {
+    var $op1 = $('#op1'),
+        $op2 = $('#op2'),
+        $result = $('#result');
 
 
-function onPlusClick() {
-   result.innerHTML = +op1.value + +op2.value;
+    function onClick(event) {
+        var op1 = parseFloat($op1.val()),
+        op2 = parseFloat($op2.val());
 
-}
 
-plusButton.onclick = onPlusClick;
+        switch ($(this).html()) {
+            case '+': $result.html(op1 + op2); break;
+            case '-': $result.html(op1 - op2); break;
+            case '*': $result.html(op1 * op2); break;
+            case '/': $result.html(op1 / op2); break;
+        }
+    }
+
+    $('button').click(onClick);
+    
+    $('#slide').click(function () {
+       $('#panel').slideToggle();
+        $(this).toggleClass('active');
+        
+    });
+    
+    $('#hide').click(function () {
+       var $panel = $('#panel');
+
+       if ($panel.is(':visible')) {
+           $panel.animate({ opacity: "hide" }, "slow");
+       }
+          else {
+           $panel.animate({ opacity: "show" }, "slow");
+       }
+        $(this).toggleClass('active');
+        
+    });
+    $('#load').click(function (event) {
+        event.preventDefault();
+
+       var target = $(this).attr('target'),
+           href = $(this).attr('href');
+
+//       $(target).load(href);
+        $.get(href, function (content) {
+            $(target).html(content);
+
+        });
+    });
+});
+
+
+
