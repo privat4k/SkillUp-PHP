@@ -51,6 +51,23 @@ $(document).ready(function () {
 
         });
     });
+ //   $('h2').html('!');
+    $('h3').css('color', 'red');
+    $('h2').css({'color': 'blue', 'font-size': '30px'});
+    $('.test').css('color', 'red');
+    $('p + p').css('color', 'red');
+    $('li + li.www').css('color', 'red');
+    $('h2 i').css('color', 'red');
+   $(':header').css('color', 'red');
+    $('h2:not(.test)').css('color', 'green');
+    $(':header:not(.test)').css('color', 'brown');
+    $(':header + :header').css('color', 'grey');
+    $('p:first').css('color', 'red');
+    $('p:last').css('color', 'brown');
+    $('h2:has(i)').css('color', 'yellow');
+    $('h2 > i').css('color', 'red');
+    $('li:eq(3)').css('color', 'red');
+    $('li:lt(9)').css('color', 'red');
 });
 
 
