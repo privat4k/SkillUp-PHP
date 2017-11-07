@@ -1,25 +1,33 @@
 <?php
-$a = [];
-    $a[1]='Mon';
-    $a[2]='Tue';
-    $a[3]='Wed';
-    $a[4]='Thu';
+/*
 
+$a = 10;
+$b = 3;
+$sum = 0;
 
-foreach ($a as $key => $value){
-    echo $key . ':' .$value . PHP_EOL;
+    echo ($a % $b);
 
+$c=[4,2,5,19,13,0,10];
+
+foreach ($c as $elem){
+    $sum+= $elem*$elem;
 }
+echo sqrt($sum);
 
-foreach ($a as $value){
-    echo $value . PHP_EOL;
+$d = 587;
 
-}
+$sqrt = sqrt($d);
+*/
+/*
+$a=[3,9,2,5,1,8];
 
+$sum=array_sum($a);
+$count=count($a);
+$result=$sum/$count;
+echo $result;
+*/
 
-/**
- * Created by PhpStorm.
- * User: SkillUP Student
- * Date: 03.11.2017
- * Time: 19:30
- */
+$b=range(1,100,1);
+
+$sum=array_sum($b);
+echo $sum;
