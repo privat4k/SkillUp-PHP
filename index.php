@@ -1,139 +1,62 @@
 <?php
-$arr = ['html', 'css', 'php', 'js', 'jq'];
-foreach ($arr as $elem) {
-    echo $elem.'<br>';
-}
+//1. Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов делить на количество) не используя цикл.
+$a=[3,9,2,5,1,8];
+echo array_sum($a) / count($a).'<br>';
 
-$arr = [1, 2, 3, 4, 5];
-$result = 0;
-foreach ($arr as $elem) {
-    $result += $elem;
-}
-echo $result.'<br>';
+//2. Найдите сумму чисел от 1 до 100 не используя цикл.
+echo array_sum(range(1, 100)).'<br>';
 
-$arr = [1, 2, 3, 4, 5];
-$result = 0;
-foreach ($arr as $elem) {
-    $result += $elem * $elem;
-}
-echo $result;
+//3. Выведите столбец чисел от 1 до 100 не используя цикл.
+$b = range(1,100);
+echo implode('<br>', $b);
 
-$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
-foreach ($arr as $key=>$elem) {
-    echo $key.' - '.$elem.'<br>';
-}
+//4. Заполните массив 10-ю иксами не используя цикл.
+$c = array_fill(0,10,'x');
+var_dump($c);
 
-$arr = ['Коля'=>'200', 'Вася'=>'300','Петя'=>'400'];
-foreach ($arr as $key=>$elem) {
-    echo $key.' - зарплата '.$elem.' долларов<br>';
-}
+//5. Заполните массив 10-ю случайными числами от 1 до 10 так, чтобы они не повторялись. Цикл использовать нельзя.
+$d = range(1,10);
+shuffle($d);
+var_dump($d);
 
-$i = 1;
-while ($i <= 100) {
-    echo $i.'<br>';
-    $i++;
-}
+//6. Найдите факториал заданного числа не используя цикл. Факториал - это произведение чисел от 1 до заданного числа включительно.
 
-for ($i = 11; $i <= 33; $i++) {
-    echo $i.'<br>';
-}
+$arg = 7;
+$e = range(1,$arg);
+echo array_product($e),'<br>';
 
-for ($i = 0; $i <= 100; $i += 2) {
-    echo $i.'<br>';
-}
+//7. Дано число. Найдите сумму цифр этого числа не используя цикл.
 
-$sum = 0;
-for ($i = 1; $i <= 100; $i++) {
-    $sum += $i;
-    echo $sum.'<br>';
-}
+$arg1 = 54893;
+$f = str_split($arg1,1);
+echo  array_sum($f);
 
-$arr = [2, 5, 9, 15, 0, 4];
-foreach ($arr as $elem) {
-    if ($elem > 3 and $elem < 10) {
-        echo $elem.'<br>';
-    }
-}
+//8. Дана строка. Сделайте заглавным последний символ этой строки не используя цикл.
 
-$sum = 0;
-$arr = [8, -15, 6, 4, 7, -3];
-foreach ($arr as $elem) {
-    if ($elem > 0) {
-        $sum += $elem;
-    }
-}
-echo $sum.'<br>';
+$j = 'stroka';
+$j = strrev($j);
+$j = ucfirst($j);
+$j = strrev($j);
+echo $j,'<br>';
 
-$arr = [1, 2, 5, 9, 4, 13, 4, 10];
-foreach ($arr as $elem) {
-    if ($elem == 4) {
-        echo 'Есть!';
-        break;
-    }
-}
+//9. Дан массив с числами. Получите из него массив с квадратными корнями этих чисел не используя цикл.
 
-$arr = ['10', '20', '30', '50', '235', '3000'];
-foreach ($arr as $elem) {
-    if ($elem[0] == '1' or $elem[0] == '2' or $elem[0] == '5') {
-        echo $elem.'<br>';
-    }
-}
+$z9 = [6,1,7,9,3];
 
-$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-$str = '';
-foreach ($arr as $elem) {
-    $str .= '-'.$elem;
-}
-echo $str.'-';
+$res = array_map('sqrt',$z9);
+var_dump($res);
 
-$arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-foreach ($arr as $key=>$elem) {
-    if ($key == 5 or $key == 6) {
-        echo '<b>'.$elem.'</b><br>';
-    } else {
-        echo $elem.'<br>';
-    }
-}
+//10. Заполните массив числами от 1 до 26 так, чтобы ключами этих чисел были буквы английского алфавита: ['a'=>1, 'b'=>2...]. Сделайте это не используя цикл.
 
-$arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-$day = 4;
+$chisla = range(1,26);
+$bukvi = range('a','z');
+$z10 = array_combine($chisla,$bukvi);
+var_dump($z10);
 
-foreach ($arr as $key=>$elem) {
-    if ($key == $day) {
-        echo '<i>'.$elem.'</i><br>';
-    } else {
-        echo $elem.'<br>';
-    }
-}
+//11. Дана строка с числами '1234567890'. Найдите сумму пар чисел: 12+34+56+78+90. Решите задачу, не используя цикл.
 
-$arr = [];
-for ($i = 1; $i <= 100; $i++) {
-    $arr[] = $i;
-}
-
-var_dump($arr);
-
-$arr = ['green'=>'зеленый', 'red'=>'красный', 'blue'=>'голубой'];
-foreach ($arr as $key=>$elem) {
-    $en[] = $key;
-    $ru[] = $elem;
-}
-
-var_dump($en);
-var_dump($ru);
-
-$num = 1000;
-$i = 0;
-while ($num > 50) {
-    $num /= 2;
-    $i++;
-}
-
-echo $i.'<br>';
-echo $num;
-
-for ($num = 1000, $i = 0; $num > 50; $num /= 2, $i++);
-
-echo $i.'<br>';
-echo $num;
+$stroka = '1234567890';
+$massiv  = str_split($stroka,2);
+$z11 = array_sum($massiv);
+echo $z11;
 
