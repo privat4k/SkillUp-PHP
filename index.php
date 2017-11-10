@@ -1,33 +1,24 @@
 <?php
-/*
 
-$a = 10;
-$b = 3;
-$sum = 0;
+include 'lib.php';
 
-    echo ($a % $b);
+$user = [
+    'first_name' => '',
+    'last_name' => '',
+    'email' => '',
+    'phone' => '',
+    'confirm' => false,
+];
 
-$c=[4,2,5,19,13,0,10];
+$errors = [];
 
-foreach ($c as $elem){
-    $sum+= $elem*$elem;
-}
-echo sqrt($sum);
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    $user = processRequest($user);
+    $errors = validateUser($user);
 
-$d = 587;
+    if (!$errors) {
+        saveUser($user);
+    }
 
-$sqrt = sqrt($d);
-*/
-/*
-$a=[3,9,2,5,1,8];
+include 'form.php';
 
-$sum=array_sum($a);
-$count=count($a);
-$result=$sum/$count;
-echo $result;
-*/
-
-$b=range(1,100,1);
-
-$sum=array_sum($b);
-echo $sum;
