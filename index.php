@@ -1,24 +1,23 @@
 <?php
 
 include 'lib.php';
+include 'User.php';
+include 'PremiumUser.php';
 
-$user = [
-    'first_name' => '',
-    'last_name' => '',
-    'email' => '',
-    'phone' => '',
-    'confirm' => false,
-];
+$user = new PremiumUser('Test');
+
 
 $errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-    $user = processRequest($user);
-    $errors = validateUser($user);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $errors = $user-> processRequest($_POST);
+
 
     if (!$errors) {
-        saveUser($user);
+        saveUser2($user);
+        header('Location: /success.html');
+        exit();
     }
-
+}
 include 'form.php';
 
