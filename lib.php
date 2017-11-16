@@ -30,5 +30,20 @@ function validateUser( array $user) {
 }
 
 function saveUser(array $user) {
-    $existing_users = file_get_contents(USERS_FILE);
+    if (file_exists(USERS_FILE)){
+        $existing_users = file_get_contents(USERS_FILE);
+    } else {
+        $existing_users = '';
+    }
+    $user_info = implode("/t", $user);
+    $existing_users .= $user_info . PHP_EOL;
+    file_put_contents(USERS_FILE, $existing_users);
+
+}
+
+function saveUser2(array $user) {
+    $file = fopen(USERS_FILE, 'a');
+    $user_info = implode("/t", $user) . PHP_EOL;
+    fputs($file, $user_info);
+    fclose($file);
 }

@@ -12,13 +12,18 @@ $user = [
 
 $errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+
     $user = processRequest($user);
     $errors = validateUser($user);
 
     if (!$errors) {
-        saveUser($user);
+        saveUser2($user);
+        header('Location: /sucess.html');
+        exit();
     }
+}
 
 include 'form.php';
 
