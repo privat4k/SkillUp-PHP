@@ -1,23 +1,13 @@
 <?php
 
-include 'lib.php';
+
 include 'User.php';
-include 'PremiumUser.php';
-
-$user = new PremiumUser('Test');
-
-
-$errors = [];
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $errors = $user-> processRequest($_POST);
+include 'Worker.php';
+include 'User_z5.php';
+include 'Worker_z5.php';
+include 'Student_z5.php';
+include 'Driver_z6.php';
+include 'Form_z7.php';
 
 
-    if (!$errors) {
-        saveUser2($user);
-        header('Location: /success.html');
-        exit();
-    }
-}
-include 'form.php';
 

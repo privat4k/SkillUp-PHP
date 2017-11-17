@@ -6,62 +6,38 @@
  * Time: 19:27
  */
 
-class User
+class Worker
 {
 
-    public $firstName = '';
+    public $name = '';
 
-    public $lastName = '';
+    public $age = '';
 
-    public $email = '';
+    public $salary = '';
+}
+    $Worker1 = new Worker;
+    $Worker1->name = 'Иван';
+    $Worker1->age = 25;
+    $Worker1->salary = 1000;
 
-    public $phone = '';
+$Worker2 = new Worker;
+$Worker2->name = 'Вася';
+$Worker2->age = 26;
+$Worker2->salary = 2000;
 
-    public $confirm = false;
+echo $Worker1->salary + $Worker2->salary . PHP_EOL;
+echo $Worker1->age + $Worker2->age . PHP_EOL;
 
-    private $isProcessed = false;
 
-    public function __construct($firstName)
+
+
+
+
+
+
+ /*   public function __construct($firstName)
     {
         $this->firstName = $firstName;
     }
+*/
 
-    public function processRequest(array $postData)
-    {
-        if ($this->isProcessed){
-            throw new Exception('User was already processed.');
-        }
-
-        $this->isProcessed = true;
-        $errors = $this->validate($postData);
-            $this->firstName = isset($postData['firstName']) ? $postData['firstName'] : '';
-            $this->lastName = isset($postData['lastName']) ? $postData['lastName'] : '';
-            $this->email = isset($postData['email']) ? $postData['email'] : '';
-            $this->phone = isset($postData['phone']) ? $postData['phone'] : '';
-            $this->confirm = isset($postData['confirm']) ? $postData['confirm'] : '';
-
-        return $errors;
-
-    }
-    protected function validate(array $user) {
-        $errors = [];
-
-        if (empty($user['confirm'])) {
-            $errors[] = 'Вы должны согласиться!';
-        }
-
-        if (!$user['email']) {
-            $errors[] = 'Введите email!';
-        }
-        if ($user['phone'] && !is_numeric($user['phone'])) {
-            $errors[] = 'В номере телефона допускаются только цифры';
-        }
-        return $errors;
-    }
-
-    public function __toString()
-    {
-        return $this->firstName . "\t" . $this->lastName . "\t" . $this->email . "\t" .
-            $this->phone . "\t" . $this->confirm;
-    }
-}
