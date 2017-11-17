@@ -33,6 +33,6 @@
         > Я согласен с правилами сайта</label>
     <button type="submit"> Зарегистрировать</button>
 </form>
-
+<p> <a href="table1.php"> Вывод</a></p>
 </body>
 </html>
