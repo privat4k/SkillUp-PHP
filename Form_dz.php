@@ -7,7 +7,7 @@ class Form_dz
     public function input(array $attr)
     {
         $attr = $this->prepareAttr($attr);
-
+        $attr = $this->input($attr);
         return '<input ' . $this->attr2Html($attr) . '>';
 
     }
