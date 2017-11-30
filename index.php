@@ -4,10 +4,10 @@
 </form>
 
 <?php
-//Если форма была отправлена и телефон не пустой:
+
 if (!empty($_REQUEST['email'])) {
-    session_start(); //стартуем сессию
-    $_SESSION['email'] = $_REQUEST['email']; //пишем телефон в сессию
+    session_start();
+    $_SESSION['email'] = $_REQUEST['email'];
 }
 ?>
 
