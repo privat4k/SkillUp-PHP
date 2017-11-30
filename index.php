@@ -1,15 +1,16 @@
-<form action="" method="GET">
-    <input type="email" name="email">
-    <input type="submit">
-</form>
-
 <?php
-//Если форма была отправлена и телефон не пустой:
-if (!empty($_REQUEST['email'])) {
-    session_start(); //стартуем сессию
-    $_SESSION['email'] = $_REQUEST['email']; //пишем телефон в сессию
-}
-?>
+include 'Worker.php';
 
+$pdo = new PDO('mysql:host=localhost;dbname=skillup;charset=utf8','root','');
+$sql = 'SELECT * FROM workers WHERE salary =  :salary AND id >=3';
+
+/** @var PDOStatement $result */
+
+$result = $pdo->prepare($sql);
+$result->execute(['salary'=>500]);
+
+while ($row = $result->fetchObject(Worker::class)){
+    var_dump($row);
+}
 
 
