@@ -14,6 +14,10 @@
           <option name="url" value="https://github.com/privat4k/ShopSkillup.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/dmitbotvd/dmitbotvd.github.io.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="D:\php\PhpstormProjects\ssh" />
